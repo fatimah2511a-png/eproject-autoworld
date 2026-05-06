@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us page </title>
+    <style>
+        body {
+            font-family: Calibri;
+        }
+        section {
+            display: flex; 
+            justify-content: center;
+            gap: 20px;
+        }
+        form {
+            border: 1px solid silver;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        input {
+            margin: 5px; 
+            padding: 10px;
+            border: 1px solid silver;
+            border-radius: 5px;
+            width: 250px;
+        }
+        select {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid silver;
+            border-radius: 5px;
+            width: 272px;
+        }
+
+        textarea {
+            width: 94%;
+            height: 100px;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid silver;
+            border-radius: 5px;
+        }
+
+        /* 1. Default State */
+        input[type="submit"] {
+        background-color: #4f46e5;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 98%;
+        
+        /* Smooth transition for all states */
+        transition: all 0.2s ease-in-out;
+        
+        /* Prevent blue highlight on mobile tap */
+        -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 2. Hover State (Mouse over) */
+        input[type="submit"]:hover {
+        background-color: #4338ca;
+        /* transform: translateY(-2px); Slight lift effect */
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        /* 3. Active State (The actual "Click" animation) */
+        input[type="submit"]:active {
+        transform: translateY(0); /* Resets the lift */
+        transform: scale(0.96);    /* "Squeezes" the button down */
+        box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+        }
+
+        /* 4. Focus State (Accessibility for keyboard users) */
+        input[type="submit"]:focus {
+        outline: 3px solid rgba(79, 70, 229, 0.5);
+        outline-offset: 2px;
+        }
+        .SubSection {
+            width: 400px; 
+            padding-left: 20px;
+            border: 1px solid silver;
+            border-radius: 10px;
+        }
+        
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <section class="contact">
+        <form method="get">
+            <h2> Contact Us </h2>
+
+
+            <div>
+                <input type="text" placeholder="Full Name">
+                <input type="text" placeholder=" Your Business Name ">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Name@EMail.Com">
+                <input type="text" placeholder="Phone Number">
+            </div>
+
+            <div>
+                <!-- <input type="number" placeholder="Message subject"> -->
+                <select id="cars" name="Message Subject">
+                    <option value="Message Subject">Message Subject</option>
+                    <option value="car sure">car sure</option>
+                    <option value="Blog">Blog</option>
+                    <option value="Forms">Forms</option>
+                    <option value="Feedback Suggestion">Feedback Suggestion </option>
+                </select>
+
+            </div>
+
+            <div>
+                <textarea id="message" name="message" rows="4" cols="50">Enter Your Message Here</textarea>
+            </div>
+
+            <input type="submit" value="Submit Request">
+            
+        </form>
+
+
+        <div class="SubSection" >
+            <h2> Contact Information </h2>
+            <h3>Address </h3>
+            
+            <p> Saeed Alam Tower, 37 Commercial Zone Liberty Market, Gulberg, Lahore, Pakistan </p>
+
+            <h3>Phone </h3>
+            <p> 0323-8018562 </p>
+
+            <h3>Email</h3>
+            <p> KaramatAli@gmail.com </p>
+
+            <h3> Business Hours </h3>
+            <p> Monday-Sunday: 09:00am-09:00pm </p>
+        </div>
+        
+        
+        
+
+
+    </section>
+</body>
+
+
+</html>
