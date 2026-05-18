@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    body {
+      background-color: #0d1117;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #d1d1d1;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .feature-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 20px;
+      padding: 30px;
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      border-color: #0d6efd;
+      box-shadow: 0 0 20px rgba(13,110,253,0.3);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      color: #0d6efd;
+      margin-bottom: 20px;
+    }
+
+    .stats-box {
+      background: #161b22;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .stats-box h2 {
+      font-size: 3rem;
+      color: #0d6efd;
+      font-weight: bold;
+    }
+
+    .team-card {
+      background: #161b22;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .team-card img {
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .testimonial {
+      background: #161b22;
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .brand-logo img {
+      /* filter: grayscale(100%); */
+      transition: 0.3s;
+      width: 120px;
+    }
+
+    .brand-logo img:hover {
+      /* filter: grayscale(0%); */
+      transform: scale(1.1);
+    }
+
+    .cta {
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+      url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2083&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+.navbar-custom {
+    background: rgba(13, 17, 23, 0.95);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    padding: 12px 0;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+
+.navbar-logo {
+    width: 150px;
+    height: 130px;
+
+    object-fit: contain;
+
+    transition: 0.3s;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+/* NAV LINKS */
+
+.nav-btn {
+    color: #ffffff !important;
+
+    font-weight: 500;
+
+    margin: 0 6px;
+
+    padding: 10px 18px !important;
+
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+
+.nav-btn:hover {
+    background: #0d6efd;
+
+    color: white !important;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 20px rgba(13,110,253,0.25);
+}
+
+/* ACTIVE PAGE */
+
+.nav-btn.active {
+    background: #0d6efd;
+
+    color: white 
+}
+
+/* TOGGLER */
+
+.navbar-toggler {
+    border: none;
+    box-shadow: none
+}
+
+/* WHITE TOGGLER ICON */
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* =========================================
+   AUTO WORLD FOOTER
+========================================= */
+
+footer {
+    background: rgba(13, 17, 23, 0.95);
+
+    border-top: 1px solid rgba(13, 17, 23, 0.95);
+
+    padding: 60px 0 30px;
+
+    color: white;
+}
+
+/* FOOTER LOGO */
+
+.footer-icon {
+    width: 60px;
+    height: 60px;
+
+    object-fit: contain;
+
+    transition: 0.3s;
+}
+
+.footer-icon:hover {
+    transform: scale(1.1);
+}
+
+/* FOOTER LINKS */
+
+.footer-link {
+    color: #bdbdbd;
+
+    margin: 0 12px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.footer-link:hover {
+    color: #0d6efd;
+}
+
+/* SOCIAL ICONS */
+
+.social-icon {
+    font-size: 22px;
+
+    color: #bdbdbd;
+
+    margin: 0 10px;
+
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: #0d6efd;
+
+    transform: translateY(-4px);
+}
+
+/* COPYRIGHT */
+
+.footer-text {
+    color: #7d8590;
+
+    font-size: 14px;
+
+    margin-top: 20px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .navbar-nav {
+        margin-top: 15px;
+    }
+
+    .nav-btn {
+        margin: 5px 0;
+
+        text-align: center;
+    }
+
+}
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+
+    <div class="container">
+
+        <!-- LOGO -->
+        <a class="navbar-brand d-flex align-items-center"
+           href="AutoWorld.html">
+
+            <img src="Auto world logo.png"
+                 alt="AutoWorld Logo"
+                 class="navbar-logo">
+
+        </a>
+
+         <!-- NAV LINKS -->
+        <div class="collapse navbar-collapse justify-content-end"
+             id="navbarContent">
+
+            <ul class="navbar-nav align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link nav-btn"
+                       href="AutoWorld.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-btn"
+                       href="Catalogue.html">
+                        Catalogue
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-btn"
+                       href="schemes.html">
+                        Schemes
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-btn"
+                       href="Car Finance.html">
+                        Car Finance
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-btn"
+                       href="Dealers.html">
+                        Dealers
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-btn"
+                       href="Compare Cars.html">
+                        Compare Cars
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-btn active"
+                       href="About.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-btn"
+                       href="contact us.html">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Auto World</h1>
+      <p class="mt-3 mb-4">
+        Driving Your Dream Car Journey with Style, Trust & Innovation
+      </p>
+
+      <a href="#" class="btn btn-primary btn-lg px-4">
+        Explore Cars
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6">
+          <img 
+            src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1974&auto=format&fit=crop"
+            class="img-fluid rounded-4 shadow"
+            alt=""
+          >
+        </div>
+
+        <div class="col-lg-6">
+          <h2 class="section-title">Our Story</h2>
+
+          <p class="text-secondary">
+            Auto World was created to transform the car buying experience.
+            We help customers discover premium vehicles with transparency,
+            affordability, and convenience.
+          </p>
+
+          <p class="text-secondary">
+            From luxury sports cars to reliable family SUVs,
+            our mission is to connect drivers with their perfect ride.
+          </p>
+
+          <a href="#" class="btn btn-outline-light mt-3">
+            Learn More
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <h2 class="section-title">Why Choose Us</h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card text-center">
+            <i class="bi bi-car-front feature-icon"></i>
+            <h4>Premium Cars</h4>
+            <p class="text-secondary">
+              Huge collection of luxury and modern vehicles.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card text-center">
+            <i class="bi bi-shield-check feature-icon"></i>
+            <h4>Trusted Dealers</h4>
+            <p class="text-secondary">
+              Verified dealers with quality assurance.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card text-center">
+            <i class="bi bi-cash-coin feature-icon"></i>
+            <h4>Best Prices</h4>
+            <p class="text-secondary">
+              Competitive pricing for every budget.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card text-center">
+            <i class="bi bi-headset feature-icon"></i>
+            <h4>24/7 Support</h4>
+            <p class="text-secondary">
+              Dedicated support team for customers.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="row g-4">
+
+        <div class="col-md-3">
+          <div class="stats-box">
+            <h2>10K+</h2>
+            <p>Cars Listed</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="stats-box">
+            <h2>5K+</h2>
+            <p>Happy Customers</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="stats-box">
+            <h2>250+</h2>
+            <p>Trusted Dealers</p>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="stats-box">
+            <h2>15+</h2>
+            <p>Cities Served</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <h2 class="section-title">Meet Our Team</h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="team-card">
+            <img 
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop"
+              class="w-100"
+              alt=""
+            >
+
+            <div class="p-4 text-center">
+              <h4>John Smith</h4>
+              <p class="text-secondary">Founder & CEO</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="team-card">
+            <img 
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop"
+              class="w-100"
+              alt=""
+            >
+
+            <div class="p-4 text-center">
+              <h4>Sarah Johnson</h4>
+              <p class="text-secondary">Sales Manager</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="team-card">
+            <img 
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop"
+              class="w-100"
+              alt=""
+            >
+
+            <div class="p-4 text-center">
+              <h4>Michael Lee</h4>
+              <p class="text-secondary">Automotive Expert</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <h2 class="section-title">What Customers Say</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+          <div class="testimonial text-center">
+            <i class="bi bi-quote fs-1 text-primary"></i>
+
+            <p class="fs-5 mt-3 text-secondary">
+              “Auto World made buying my dream SUV incredibly easy.
+              Professional service, great prices, and amazing support!”
+            </p>
+
+            <h5 class="mt-4">— Ahmed Khan</h5>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- BRANDS -->
+<section class="py-5">
+<div class="container">
+
+    <div class="text-center mb-5">
+        <h2 class="section-title">
+            Brands We Work With
+        </h2>
+    </div>
+
+    <div class="row text-center align-items-center justify-content-center g-4">
+
+        <!-- TOYOTA -->
+        <div class="col-6 col-md-2 brand-logo">
+            <img src="C:\Users\Administrator\Downloads\Toyota-logo.png"
+                    class="img-fluid"
+                    alt="Toyota">
+        </div>
+
+        <!-- HYUNDAI -->
+        <div class="col-6 col-md-2 brand-logo">
+            <img src="C:\Users\Administrator\Downloads\hyundai.png"
+                    class="img-fluid"
+                    alt="Hyundai">
+        </div>
+
+        <!-- NISSAN -->
+        <div class="col-6 col-md-2 brand-logo">
+            <img src="C:\Users\Administrator\Downloads\nissan.svg"
+                    class="img-fluid"
+                    alt="Nissan">
+        </div>
+
+        <!-- HONDA -->
+        <div class="col-6 col-md-2 brand-logo">
+            <img src="C:\Users\Administrator\Downloads\honda-logo.webp"
+                    class="img-fluid"
+                    alt="Honda">
+        </div>
+
+        <!-- BYD -->
+        <div class="col-6 col-md-2 brand-logo">
+            <img src="C:\Users\Administrator\Downloads\silver-byd-logo.png"
+                    class="img-fluid"
+                     alt="BYD">
+        </div>
+
+        </div>
+
+    </div>
+</section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+
+      <h2 class="display-4 fw-bold">
+        Ready to Find Your Perfect Car?
+      </h2>
+
+      <p class="mt-3 mb-4 text-light">
+        Browse our premium collection today.
+      </p>
+
+      <a href="#" class="btn btn-primary btn-lg px-5">
+        Browse Inventory
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mt-5 pt-5 bg-dark">
+    <div class="d-flex justify-content-center gap-2">
+        <img src="Facebook logo.png" style="width: 50px; height: 50px;"  class="rounded-circle" alt="Facebook logo">
+        <img src="Insta logo.jpg" style="width: 50px; height: 50px;" class="rounded-circle" alt="Instagram logo">
+        <img src="Twitter logo.png" style="width: 50px; height: 50px;" class="rounded-circle" alt="Twitter logo">
+    </div>
+
+    <div class="mx-auto w-25 mt-3 text-center">
+        <a href="AutoWorld.html" class="footer-link">Home</a>
+        <a href="About.html" class="footer-link">About</a>
+        <a href="Catalogue.html" class="footer-link">Catalogue</a>
+        <a href="schemes.html" class="footer-link">Schemes</a>
+        <a href="Car Finance.html" class="footer-link">Car Finance</a>
+        <a href="Compare Cars.html" class="footer-link">Compare Cars</a>
+        <a href="Dealers.html" class="footer-link">Dealers</a>
+        <a href="contact us.html" class="footer-link">Contact Us</a>
+    </div>
+
+    <p class="text-center mt-3 text-secondary">
+        © 2026 Auto World. -All Rights Reserved.
+    </p>
+
+</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
