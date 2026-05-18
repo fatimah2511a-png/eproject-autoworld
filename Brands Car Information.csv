@@ -1,0 +1,17 @@
+id,Brand Name,Body Type,Car Name,Engine/Hybrid/Electric,Engine Power (CC),Colors Offered,Mileage,Auto/Manual,AC/Radio,Model Year,Price
+1,Suzuki,Hatchback,Alto,Engine,658,"blue, grey, white, red",18,Manual,Yes,2026,32 lacs
+2,Suzuki,Hatchback,cultus,Engine,998,"blue, grey, white, red",16,auto/Manual,Yes,2026,45.9 lacs
+3,suzuki,hatchback,swift,engine,1197,"blue,red ,silver,whaite12.18",,automatic,yes,2026,47.39 lacs
+4,Toyata,hatchback,yaris,engine,1329cc,"blue, grey, white, ",12,automatic,Yes,2026,46.5 lacs
+5,Toyata,sealon,Grendy,Engine,1798,"blue, grey, white, ",15,Auto/Manual,Yes,2026,82 lacs
+6,toyata,suv,hybride,engine,1798,"blue, grey, white, ",12,auto,yes,2026,89.5 lacs
+7,Honda,suv,,engine,,"blue, grey, white, ",12,automatic,yes,2026,90 lacs
+8,Honda,sealon,civic,Engine,1300cc/1500cc,"blue, grey, white, ",15,Auto/Manual,Yes,2026,1.01 crore
+9,honda,sedan,City,Engine,13,"blue,red,white",12,,Yes,2026,"4,737,000"
+10,hyundai,sedan,sonata,Engine,1999cc/2497cc,"blue, grey, white, ",12.13,automatic,Yes,2026,"16,521,000"
+11,hyundai,sedan,sonata n line,Engine,2497cc,"blue, grey, white, ",9,automatic,Yes,2026,"16,521,000"
+12,hyundai,sedan,Elantra,hybride,1580cc,"blue, grey, white, ",22,automatic,Yes,2026,98.95 lacs
+13,nissan,suv,nismo,turbo engine,"3,492","grey,whaite, black",3.5,automatic,Yes,2026,6.25 crores
+14,nissan,coupe,z,turbo engine,"3,000","grey,whaite, black",6-13kL,automatic,Yes,2026,6.25 crores
+15,Nissan,hatchback,dayz,hybride,660cc,,18,automatic,Yes,2026,56.5 lacs
+16,Byd,sedan,seal,electric,390kW,"Ice Blue, Polar White, Space Black, Atlantis Grey, and Indigo Grey",510,automatic,yes,2026,"16,990,000"
