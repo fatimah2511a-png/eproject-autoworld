@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us page </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f6fa;
+            font-family: Calibri;
+        }
+        section {
+            display: flex; 
+            justify-content: center;
+            gap: 20px;
+            margin-top: 85px;
+        }
+        form {
+            border: 1px solid silver;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        input {
+            margin: 5px; 
+            padding: 10px;
+            border: 1px solid silver;
+            border-radius: 5px;
+            width: 250px;
+        }
+        select {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid silver;
+            border-radius: 5px;
+            width: 272px;
+        }
+
+        textarea {
+            width: 94%;
+            height: 100px;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid silver;
+            border-radius: 5px;
+        }
+
+        /* 1. Default State */
+        input[type="submit"] {
+        background-color: #4f46e5;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 98%;
+        
+        /* Smooth transition for all states */
+        transition: all 0.2s ease-in-out;
+        
+        /* Prevent blue highlight on mobile tap */
+        -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 2. Hover State (Mouse over) */
+        input[type="submit"]:hover {
+        background-color: #4338ca;
+        /* transform: translateY(-2px); Slight lift effect */
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        /* 3. Active State (The actual "Click" animation) */
+        input[type="submit"]:active {
+        transform: translateY(0); /* Resets the lift */
+        transform: scale(0.96);    /* "Squeezes" the button down */
+        box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+        }
+
+        /* 4. Focus State (Accessibility for keyboard users) */
+        input[type="submit"]:focus {
+        outline: 3px solid rgba(79, 70, 229, 0.5);
+        outline-offset: 2px;
+        }
+        .SubSection {
+            width: 400px; 
+            padding-left: 20px;
+            border: 1px solid silver;
+            border-radius: 10px;
+        }
+        .navbar-custom {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Prevent logo from stretching navbar */
+    .navbar-logo {
+        height: 150px;
+        width: 200px;
+        object-fit: contain;
+    }
+
+    /* Keep links centered */
+    .nav {
+        align-items: center;
+    }
+
+    .navbar-custom {
+        background: #ffffff;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    /* Links style */
+    .nav-btn {
+        color: #333;
+        font-weight: 500;
+        font-size:16px; 
+        margin: 0 8px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    /* Hover effect */
+    .nav-btn:hover {
+        background-color: #0d6efd;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* Remove default underline effect */
+    .nav-link {
+        text-decoration: none;
+    }
+
+    input {
+    text-align: center;
+    }
+
+     .footer-icon {
+        width: 45px;
+        height: 45px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .footer-icon:hover {
+        transform: scale(1.1);
+    }
+
+    /* Footer links */
+    .footer-link {
+        color: #ccc;
+        margin: 0 8px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .footer-link:hover {
+        color: #ffffff;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-between align-items-center navbar-custom">
+
+    <!-- Logo -->
+        <div class="d-flex align-items-center">
+            <img src="Auto world logo.png" width="70" height="90" alt="AutoWorld Logo" class="navbar-logo me-2">
+            <!-- <h4 class="m-0 fw-bold text-dark">AutoWorld</h4> -->
+        </div>
+
+    <!-- Links -->
+    <ul class="nav align-items-center">
+        <li class="nav-item"><a class="nav-link nav-btn" href="AutoWorld.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link nav-btn" href="Catalogue.html">Catalogue</a></li>
+        <li class="nav-item"><a class="nav-link nav-btn" href="schemes.html">Schemes</a></li>
+        <li class="nav-item"><a class="nav-link nav-btn" href="Car Finance.html">Car Finance</a></li>
+        <li class="nav-item"><a class="nav-link nav-btn" href="Dealers.html">Dealers</a></li>
+        <li class="nav-item"><a class="nav-link nav-btn" href="Compare Cars.html">Compare Cars</a></li>
+        <li class="nav-item"><a class="nav-link nav-btn" href="About.html">About</a></li>
+        <li class="nav-item"><a class="nav-link nav-btn" href="contact us.html">Contact Us</a></li>
+    </ul>
+
+  </div>
+
+    <section class="contact">
+        <form method="get">
+            <h2> Contact Us </h2>
+
+
+            <div>
+                <input type="text" placeholder="Full Name">
+                <input type="text" placeholder=" Your Business Name ">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Name@EMail.Com">
+                <input type="text" placeholder="Phone Number">
+            </div>
+
+            <div>
+                <!-- <input type="number" placeholder="Message subject"> -->
+                <select id="cars" name="Message Subject">
+                    <option value="Message Subject">Message Subject</option>
+                    <option value="car sure">car sure</option>
+                    <option value="Blog">Blog</option>
+                    <option value="Forms">Forms</option>
+                    <option value="Feedback Suggestion">Feedback Suggestion </option>
+                </select>
+
+            </div>
+
+            <div>
+                <textarea id="message" name="message" rows="4" cols="50">Enter Your Message Here</textarea>
+            </div>
+
+            <input type="submit" value="Submit Request">
+            
+        </form>
+
+
+        <div class="SubSection" >
+            <h2> Contact Information </h2>
+            <h3>Address </h3>
+            
+            <p> Saeed Alam Tower, 37 Commercial Zone Liberty Market, Gulberg, Lahore, Pakistan </p>
+
+            <h3>Phone </h3>
+            <p> 0323-8018562 </p>
+
+            <h3>Email</h3>
+            <p> KaramatAli@gmail.com </p>
+
+            <h3> Business Hours </h3>
+            <p> Monday-Sunday: 09:00am-09:00pm </p>
+        </div>
+    </section>
+
+    <footer class="mt-5 pt-5 bg-dark">
+        <div class="d-flex justify-content-center gap-2">
+            <img src="Facebook logo.png" style="width: 50px; height: 50px;"  class="rounded-circle" alt="Facebook logo">
+            <img src="Insta logo.jpg" style="width: 50px; height: 50px;" class="rounded-circle" alt="Instagram logo">
+            <img src="Twitter logo.png" style="width: 50px; height: 50px;" class="rounded-circle" alt="Twitter logo">
+        </div>
+
+        <div class="mx-auto w-25 mt-3 text-center">
+            <a class="px-1 text-decoration-none text-white" href="AutoWorld.html">Home</a>
+            <a class="px-1 text-decoration-none text-white" href="About.html">About</a>
+            <a class="px-1 text-decoration-none text-white" href="Catalogue.html">Catalogue</a>
+            <a class="px-1 text-decoration-none text-white" href="schemes.html">schemes</a>
+            <a class="px-1 text-decoration-none text-white" href="Car Finance.html">Car Finance</a>
+            <a class="px-1 text-decoration-none text-white" href="Compare Cars.html">Compare Cars</a>
+            <a class="px-1 text-decoration-none text-white" href="contact us.html">contact</a>
+        </div>
+        
+        <p class="text-center mt-3 text-secondary"> © 2023 AutoWorld. -All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
