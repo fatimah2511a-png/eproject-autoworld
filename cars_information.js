@@ -11,7 +11,8 @@ cars = [
     "Auto/Manual": "Manual",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "32 lacs"
+    "Price": "32 lacs",
+    "image": "https://cache4.pakwheels.com/system/car_generation_pictures/16749/medium/Cover.jpg?1768990406"
   },
   {
     "id": 2,
@@ -25,7 +26,8 @@ cars = [
     "Auto/Manual": "auto/Manual",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "45.9 lacs"
+    "Price": "45.9 lacs",
+    "image": "https://cache4.pakwheels.com/system/car_generation_pictures/6014/original/Suzuki_Cultus_-_PNG.png?1768562638"
   },
   {
     "id": 3,
@@ -39,12 +41,13 @@ cars = [
     "Auto/Manual": "automatic",
     "AC/Radio": "yes",
     "Model Year": 2026,
-    "Price": "47.39 lacs"
+    "Price": "47.39 lacs",
+    "image": "https://cache4.pakwheels.com/system/car_generation_pictures/7311/original/White-Base-PS.jpg?1768566947"
   },
   {
     "id": 4,
     "Brand Name": "Toyata",
-    "Body Type": "hatchback",
+    "Body Type": "sendan",
     "Car Name": "yaris",
     "Engine/Hybrid/Electric": "engine",
     "Engine Power (CC)": "1329cc",
@@ -53,7 +56,8 @@ cars = [
     "Auto/Manual": "automatic",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "46.5 lacs"
+    "Price": "46.5 lacs",
+    "image": "https://cache4.pakwheels.com/system/car_generation_pictures/16706/original/Cover.jpg?1768979326"
   },
   {
     "id": 5,
@@ -67,27 +71,29 @@ cars = [
     "Auto/Manual": "Auto/Manual",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "82 lacs"
+    "Price": "82 lacs",
+    "image": "https://cache1.pakwheels.com/system/car_generation_pictures/5361/original/Corolla-X-Cars-Cropped-Pictures-for-Website.jpg?1606903674"
   },
   {
     "id": 6,
     "Brand Name": "toyata",
     "Body Type": "suv",
-    "Car Name": "hybride",
-    "Engine/Hybrid/Electric": "engine",
+    "Car Name": "Cross",
+    "Engine/Hybrid/Electric": "Hybrid",
     "Engine Power (CC)": 1798,
     "Colors Offered": "blue, grey, white,",
     "Mileage": 12,
     "Auto/Manual": "auto",
     "AC/Radio": "yes",
     "Model Year": 2026,
-    "Price": "89.5 lacs"
+    "Price": "89.5 lacs",
+    "image": "https://cache2.pakwheels.com/system/car_generation_pictures/7650/original/cockpit.jpg?1768567180"
   },
   {
     "id": 7,
     "Brand Name": "Honda",
     "Body Type": "suv",
-    "Car Name": "",
+    "Car Name": "HR-V",
     "Engine/Hybrid/Electric": "engine",
     "Engine Power (CC)": "",
     "Colors Offered": "blue, grey, white,",
@@ -95,7 +101,8 @@ cars = [
     "Auto/Manual": "automatic",
     "AC/Radio": "yes",
     "Model Year": 2026,
-    "Price": "90 lacs"
+    "Price": "90 lacs",
+    "image": "https://cache4.pakwheels.com/system/car_generation_pictures/16746/original/Cover.jpg?1768989567"
   },
   {
     "id": 8,
@@ -109,7 +116,8 @@ cars = [
     "Auto/Manual": "Auto/Manual",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "1.01 crore"
+    "Price": "1.01 crore",
+    "image": "https://cache2.pakwheels.com/system/car_generation_pictures/10345/original/Cover_%2818%29.jpg?1767275410"
   },
   {
     "id": 9,
@@ -123,7 +131,8 @@ cars = [
     "Auto/Manual": "",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "4,737,000"
+    "Price": "4,737,000",
+    "image": "https://cache1.pakwheels.com/system/car_generation_pictures/16740/original/Cover.jpg?1768988801"
   },
   {
     "id": 10,
@@ -137,7 +146,8 @@ cars = [
     "Auto/Manual": "automatic",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "16,521,000"
+    "Price": "16,521,000",
+    "image": "https://cache2.pakwheels.com/system/car_generation_pictures/8025/original/Cover.jpg?1768564613"
   },
   {
     "id": 11,
@@ -151,7 +161,8 @@ cars = [
     "Auto/Manual": "automatic",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "16,521,000"
+    "Price": "16,521,000",
+    "image": "https://cache2.pakwheels.com/system/car_generation_pictures/8025/original/Cover.jpg?1768564613"
   },
   {
     "id": 12,
@@ -165,7 +176,8 @@ cars = [
     "Auto/Manual": "automatic",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "98.95 lacs"
+    "Price": "98.95 lacs",
+    "image": "https://cache1.pakwheels.com/system/car_generation_pictures/9800/original/Cover.jpg?1760439908"
   },
   {
     "id": 13,
@@ -179,7 +191,8 @@ cars = [
     "Auto/Manual": "automatic",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "6.25 crores"
+    "Price": "6.25 crores",
+    "image": "https://cache2.pakwheels.com/system/car_generation_pictures/5740/original/nissan_note_2012.jpg?1768566137"
   },
   {
     "id": 14,
@@ -193,7 +206,8 @@ cars = [
     "Auto/Manual": "automatic",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "6.25 crores"
+    "Price": "6.25 crores",
+    "image": "https://cache3.pakwheels.com/ad_pictures/1408/nissan-350z-coupe-8-2004-140856601.webp"
   },
   {
     "id": 15,
@@ -207,7 +221,8 @@ cars = [
     "Auto/Manual": "automatic",
     "AC/Radio": "Yes",
     "Model Year": 2026,
-    "Price": "56.5 lacs"
+    "Price": "56.5 lacs",
+    "image": "https://cache2.pakwheels.com/ad_pictures/1423/nissan-dayz-x-40-2021-142353918.webp"
   },
   {
     "id": 16,
@@ -221,6 +236,7 @@ cars = [
     "Auto/Manual": "automatic",
     "AC/Radio": "yes",
     "Model Year": 2026,
-    "Price": "16,990,000"
+    "Price": "16,990,000",
+    "image": "https://cache3.pakwheels.com/ad_pictures/1438/byd-seal-premium-11-2025-143896187.webp"
   }
 ]
