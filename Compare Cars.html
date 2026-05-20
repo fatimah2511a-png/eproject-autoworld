@@ -311,110 +311,6 @@ body{
 
 </div>
 
-<script>
-const cars=[
-  {id:1,name:"Tesla Model 3",price:42000,image:"https://via.placeholder.com/300x180",specs:{Mileage:12000,Fuel:"Electric",Transmission:"Automatic",Range:"450km"}},
-  {id:2,name:"BMW i4",price:48000,image:"https://via.placeholder.com/300x180",specs:{Mileage:8000,Fuel:"Electric",Transmission:"Automatic",Range:"420km"}},
-  {id:3,name:"Audi A4",price:39000,image:"https://via.placeholder.com/300x180",specs:{Mileage:15000,Fuel:"Petrol",Transmission:"Automatic",Range:"650km"}},
-  {id:4,name:"Toyota Corolla",price:25000,image:"https://via.placeholder.com/300x180",specs:{Mileage:22000,Fuel:"Petrol",Transmission:"Manual",Range:"700km"}}
-];
-
-let selected=[];
-let filters={fuel:"",trans:""};
-
-const carSelect=document.getElementById("carSelect");
-
-function init(){
-  carSelect.innerHTML=cars.map(c=>`<option value="${c.id}">${c.name}</option>`).join("");
-  renderStrip();
-}
-
-function applyFilters(){
-  filters.fuel=document.getElementById("fuelFilter").value;
-  filters.trans=document.getElementById("transFilter").value;
-}
-
-function filteredCars(){
-  return cars.filter(c=>{
-    if(filters.fuel && c.specs.Fuel!==filters.fuel) return false;
-    if(filters.trans && c.specs.Transmission!==filters.trans) return false;
-    return true;
-  });
-}
-
-function addCar(){
-  const id=+carSelect.value;
-  const car=cars.find(c=>c.id===id);
-  if(car && !selected.find(x=>x.id===id)) selected.push(car);
-  render();
-}
-
-function removeCar(id){
-  selected=selected.filter(c=>c.id!==id);
-  render();
-}
-
-function renderStrip(){
-  const strip=document.getElementById("carStrip");
-  strip.innerHTML=filteredCars().map(c=>`
-    <div class="car-card">
-      <img class="car-img" src="${c.image}"/>
-      <div class="price">$${c.price}</div>
-      <div>${c.name}</div>
-      <button class="btn-accent mt-2" onclick="addFromStrip(${c.id})">Add</button>
-    </div>
-  `).join("");
-}
-
-function addFromStrip(id){
-  carSelect.value=id;
-  addCar();
-}
-
-function render(){
-  renderStrip();
-
-  const table=document.getElementById("table");
-  if(selected.length===0){ table.innerHTML=""; return; }
-
-  let sorted=[...selected];
-  const sort=document.getElementById("sortSelect").value;
-
-  if(sort=="price") sorted.sort((a,b)=>a.price-b.price);
-  if(sort=="Mileage") sorted.sort((a,b)=>a.specs.Mileage-b.specs.Mileage);
-
-  const keys=Object.keys(sorted[0].specs);
-
-  let html=`<tr><th>Feature</th>`;
-  sorted.forEach(c=>{
-    html+=`<th>${c.name}<br><button class='btn-ghost mt-1' onclick='removeCar(${c.id})'>Remove</button></th>`;
-  });
-  html+=`</tr>`;
-
-  html+=`<tr><td>Price</td>`;
-  const bestPrice=Math.min(...sorted.map(c=>c.price));
-  sorted.forEach(c=>{
-    html+=`<td class='${c.price===bestPrice?"highlight":""}'>$${c.price}</td>`;
-  });
-  html+=`</tr>`;
-
-  keys.forEach(k=>{
-    html+=`<tr><td>${k}</td>`;
-    const numeric=typeof sorted[0].specs[k]==="number";
-    const best=numeric?Math.min(...sorted.map(c=>c.specs[k])):null;
-
-    sorted.forEach(c=>{
-      const val=c.specs[k];
-      html+=`<td class='${best && val===best?"highlight":""}'>${val}</td>`;
-    });
-    html+=`</tr>`;
-  });
-
-  table.innerHTML=html;
-}
-
-init();
-</script>
 
     <footer class="mt-5 pt-5 bg-dark">
         <div class="d-flex justify-content-center gap-2">
@@ -437,6 +333,142 @@ init();
         <p class="text-center mt-3 text-secondary"> © 2023 AutoWorld. -All Rights Reserved.</p>
     </footer>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    <script src="cars_information.js"></script>
+
+    <script>
+    let selected = [];
+    let filters = { fuel: "", trans: "" };
+
+    const carSelect = document.getElementById("carSelect");
+
+    // ✅ Convert YOUR data structure → usable format
+    function getFormattedCars() {
+      return cars.map(c => ({
+        id: c.id,
+        name: `${c["Brand Name"]} ${c["Car Name"]}`,
+        price: parseFloat(c["Price"]) || 0,
+        image: c.image,
+        specs: {
+          Mileage: parseFloat(c["Mileage"]) || 0,
+          Fuel: c["Engine/Hybrid/Electric"],
+          Transmission: c["Auto/Manual"],
+          Engine: c["Engine Power (CC)"],
+          Year: c["Model Year"]
+        }
+      }));
+    }
+
+    function init() {
+      const formattedCars = getFormattedCars();
+
+      carSelect.innerHTML = formattedCars.map(c =>
+        `<option value="${c.id}">${c.name}</option>`
+      ).join("");
+
+      renderStrip();
+    }
+
+    function applyFilters() {
+      filters.fuel = document.getElementById("fuelFilter").value;
+      filters.trans = document.getElementById("transFilter").value;
+      renderStrip();
+    }
+
+    function filteredCars() {
+      return getFormattedCars().filter(c => {
+        if (filters.fuel && c.specs.Fuel !== filters.fuel) return false;
+        if (filters.trans && c.specs.Transmission !== filters.trans) return false;
+        return true;
+      });
+    }
+
+    function addCar() {
+      const id = +carSelect.value;
+      const car = getFormattedCars().find(c => c.id === id);
+
+      if (car && !selected.find(x => x.id === id)) {
+        selected.push(car);
+      }
+      render();
+    }
+
+    function removeCar(id) {
+      selected = selected.filter(c => c.id !== id);
+      render();
+    }
+
+    function renderStrip() {
+      const strip = document.getElementById("carStrip");
+
+      strip.innerHTML = filteredCars().map(c => `
+        <div class="car-card">
+          <img class="car-img" src="${c.image}"/>
+          <div class="price">${c.price} lacs</div>
+          <div>${c.name}</div>
+          <button class="btn-accent mt-2" onclick="addFromStrip(${c.id})">Add</button>
+        </div>
+      `).join("");
+    }
+
+    function addFromStrip(id) {
+      carSelect.value = id;
+      addCar();
+    }
+
+    function render() {
+      renderStrip();
+
+      const table = document.getElementById("table");
+      if (selected.length === 0) {
+        table.innerHTML = "";
+        return;
+      }
+
+      let sorted = [...selected];
+      const sort = document.getElementById("sortSelect").value;
+
+      if (sort === "price") sorted.sort((a, b) => a.price - b.price);
+      if (sort === "Mileage") sorted.sort((a, b) => a.specs.Mileage - b.specs.Mileage);
+
+      const keys = Object.keys(sorted[0].specs);
+
+      let html = `<tr><th>Feature</th>`;
+      sorted.forEach(c => {
+        html += `<th>${c.name}<br>
+          <button class='btn-ghost mt-1' onclick='removeCar(${c.id})'>Remove</button>
+        </th>`;
+      });
+      html += `</tr>`;
+
+      // Price row
+      html += `<tr><td>Price</td>`;
+      const bestPrice = Math.min(...sorted.map(c => c.price));
+      sorted.forEach(c => {
+        html += `<td class='${c.price === bestPrice ? "highlight" : ""}'>${c.price} lacs</td>`;
+      });
+      html += `</tr>`;
+
+      // Specs
+      keys.forEach(k => {
+        html += `<tr><td>${k}</td>`;
+
+        const numeric = typeof sorted[0].specs[k] === "number";
+        const best = numeric ? Math.min(...sorted.map(c => c.specs[k])) : null;
+
+        sorted.forEach(c => {
+          const val = c.specs[k];
+          html += `<td class='${best && val === best ? "highlight" : ""}'>${val}</td>`;
+        });
+
+        html += `</tr>`;
+      });
+
+      table.innerHTML = html;
+    }
+
+    init();
+    </script>
+  </body>
 </html>
